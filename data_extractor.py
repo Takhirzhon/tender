@@ -1,12 +1,12 @@
 import os
 import pdfplumber
-import fitz  # PyMuPDF
+import pymupdf
 from pdf2image import convert_from_path
 import pytesseract
 import pandas as pd
 
-TENDER_DIR = "tenders/raw"
-TEXT_DIR = "tenders/text"
+TENDER_DIR = "C:/Users/tashmatov/tender/tenders/"
+TEXT_DIR = "C:/Users/tashmatov/tender/tenders/text"
 os.makedirs(TEXT_DIR, exist_ok=True)
 
 metadata = []
@@ -23,10 +23,10 @@ def extract_text_ocr(path):
     return text
 
 def is_scanned(path):
-    doc = fitz.open(path)
+    doc = pymupdf.open(path)  # type: ignore
     for page in doc:
-        blocks = page.get_text("blocks")
-        if any(b[4].strip() for b in blocks):
+        text = page.get_text()  # type: ignore
+        if text.strip():
             return False
     return True
 
@@ -53,7 +53,7 @@ for filename in os.listdir(TENDER_DIR):
 
         metadata.append({
             "filename": filename,
-            "pages": fitz.open(full_path).page_count,
+            "pages": pymupdf.open(full_path).page_count,  # type: ignore
             "source": source,
             "text_len": len(text)
         })
@@ -66,3 +66,4 @@ for filename in os.listdir(TENDER_DIR):
 df = pd.DataFrame(metadata)
 df.to_csv("tenders/metadata.csv", index=False)
 print("✅ Extraction complete. Metadata saved.")
+    
