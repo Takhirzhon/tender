@@ -62,8 +62,4 @@ for filename in os.listdir(TENDER_DIR):
         print(f"❌ Error with {filename}: {e}")
         continue
 
-# Save metadata
-df = pd.DataFrame(metadata)
-df.to_csv("tenders/metadata.csv", index=False)
-print("✅ Extraction complete. Metadata saved.")
     
