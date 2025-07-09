@@ -16,7 +16,6 @@ from core.score_matrix import AVK5Estimator, DocumentComplianceChecker, Profitab
 import requests
 import xml.etree.ElementTree as ET
 from urllib.parse import urlencode
-BASE_DIR = os.path.dirname(__file__)
 
 PROZORRO_API_URL = "https://public.api.openprocurement.org/api/2.4/tenders"
 OUTPUT_DIR = "../tenders"
@@ -36,7 +35,7 @@ def download_prozorro_tenders(topic=None, total_to_download=1, days_back=None):
     print(f"🔍 Downloading tenders for topic: {topic}")
 
     # Load topic keywords
-    keywords_path = os.path.join(BASE_DIR, "data", "keywords.json")
+    keywords_path = os.path.join("data", "keywords.json")
     if not os.path.exists(keywords_path):
         raise FileNotFoundError("❌ keywords.json not found!")
 
@@ -273,8 +272,7 @@ if tab == "📥 Data Downloader":
     st.header("📥 Download Tenders from ProZorro")
 
     # Load topics from keywords.json dynamically
-    keywords_path = os.path.join("data", "keywords.json")
-    with open(keywords_path, "r", encoding="utf-8") as f:
+    with open("..\data\keywords.json", "r", encoding="utf-8") as f:
         topic_keywords = json.load(f)
     topic_list = list(topic_keywords.keys())
 
@@ -377,7 +375,7 @@ elif tab == "🔍 Tender Analysis":
             progress_bar.progress((i + 1) / len(selected_tenders))
             status_text.text(f"Analyzing {tid}...")
 
-            path = os.path.join("tenders", f"ProZorro_{tid}.json")
+            path = f"../tenders/ProZorro_{tid}.json"
             if os.path.exists(path):
                 with open(path, "r", encoding="utf-8") as f:
                     data = json.load(f)
@@ -540,7 +538,7 @@ elif tab == "📊 Tender Evaluation":
         st.warning("⚠️ No tender analysis available. Please analyze tenders first.")
         st.stop()
 
-    avk5_data = json.load(open("data/avk5_standards.json", "r", encoding="utf-8"))
+    avk5_data = json.load(open("../data/avk5_standards.json", "r", encoding="utf-8"))
     compliance = st.session_state.document_vault
     profitability = ProfitabilityAnalyzer(AVK5Estimator())
 
