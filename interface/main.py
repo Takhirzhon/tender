@@ -272,7 +272,7 @@ if tab == "📥 Data Downloader":
     st.header("📥 Download Tenders from ProZorro")
 
     # Load topics from keywords.json dynamically
-    with open("./data/keywords.json", "r", encoding="utf-8") as f:
+    with open("/mount/src/tender/interface/data/keywords.json", "r", encoding="utf-8") as f:
         topic_keywords = json.load(f)
     topic_list = list(topic_keywords.keys())
 
