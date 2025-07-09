@@ -8,7 +8,7 @@ from urllib.parse import urlencode
 
 # Configuration
 PROZORRO_API_URL = "https://public.api.openprocurement.org/api/2.4/tenders"
-OUTPUT_DIR = "../tenders"
+OUTPUT_DIR = "/opt/render/project/src/tenders"
 MAX_RESULTS = 3
 RATE_LIMIT_DELAY = 1.5
 
@@ -24,7 +24,7 @@ def download_prozorro_tenders(topic="Construction", total_to_download=10, days_b
     print(f"🔍 Downloading tenders for topic: {topic}")
 
     # Load topic keywords
-    keywords_path = "../data/keywords.json"
+    keywords_path = "/opt/render/project/src/data/keywords.json"
     if not os.path.exists(keywords_path):
         raise FileNotFoundError("❌ keywords.json not found!")
 

@@ -18,7 +18,7 @@ import xml.etree.ElementTree as ET
 from urllib.parse import urlencode
 
 PROZORRO_API_URL = "https://public.api.openprocurement.org/api/2.4/tenders"
-OUTPUT_DIR = "../tenders"
+OUTPUT_DIR = "/opt/render/project/src/tenders"
 MAX_RESULTS = 3
 RATE_LIMIT_DELAY = 1.5
 # Load environment variables
@@ -35,7 +35,7 @@ def download_prozorro_tenders(topic=None, total_to_download=1, days_back=None):
     print(f"🔍 Downloading tenders for topic: {topic}")
 
     # Load topic keywords
-    keywords_path = "../data/keywords.json"
+    keywords_path = "/opt/render/project/src/data/keywords.json"
     if not os.path.exists(keywords_path):
         raise FileNotFoundError("❌ keywords.json not found!")
 
@@ -315,7 +315,7 @@ elif tab == "🔍 Tender Analysis":
     # Check for existing tender files
     def load_existing_tenders():
         tender_files = []
-        tenders_dir = "../tenders"
+        tenders_dir = "/opt/render/project/src/tenders"
         if os.path.exists(tenders_dir):
             for filename in os.listdir(tenders_dir):
                 if filename.startswith("ProZorro_") and filename.endswith(".json"):
@@ -375,7 +375,7 @@ elif tab == "🔍 Tender Analysis":
             progress_bar.progress((i + 1) / len(selected_tenders))
             status_text.text(f"Analyzing {tid}...")
 
-            path = f"../tenders/ProZorro_{tid}.json"
+            path = f"/opt/render/project/src/tenders/ProZorro_{tid}.json"
             if os.path.exists(path):
                 with open(path, "r", encoding="utf-8") as f:
                     data = json.load(f)
@@ -510,8 +510,8 @@ elif tab == "🏢 Company Profile":
     
     if st.button("Add to Vault") and uploaded_file:
         # Save file
-        os.makedirs("data/documents", exist_ok=True)
-        file_path = f"data/documents/{uploaded_file.name}"
+        os.makedirs("/opt/render/project/src/data/documents", exist_ok=True)
+        file_path = f"/opt/render/project/src/data/documents/{uploaded_file.name}"
         with open(file_path, "wb") as f:
             f.write(uploaded_file.getbuffer())
         

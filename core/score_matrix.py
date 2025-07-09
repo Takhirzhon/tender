@@ -209,7 +209,7 @@ class AVK5Estimator:
 class DocumentComplianceChecker:
     """Check tender document requirements against company's document vault"""
     
-    def __init__(self, document_vault_path="data/document_vault.json"):
+    def __init__(self, document_vault_path="/opt/render/project/src/data/document_vault.json"):
         self.vault_path = document_vault_path
         self.document_vault = self.load_document_vault()
     
