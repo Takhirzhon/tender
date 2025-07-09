@@ -5,8 +5,8 @@ from pdf2image import convert_from_path
 import pytesseract
 import pandas as pd
 
-TENDER_DIR = "C:/Users/tashmatov/tender/tenders/"
-TEXT_DIR = "C:/Users/tashmatov/tender/tenders/text"
+TENDER_DIR = "../tenders/"
+TEXT_DIR = "../tenders/text"
 os.makedirs(TEXT_DIR, exist_ok=True)
 
 metadata = []
