@@ -16,7 +16,7 @@ client = anthropic.Anthropic(
 
 TEXT_DIR = "../tenders"
 OUTPUT_EXCEL = "../tenders/claude_extracted.xlsx" 
-MAX_FILES = 10
+MAX_FILES = 3
 MAX_TOKENS = 8000 
 
 # Enhanced columns based on stakeholder requirements

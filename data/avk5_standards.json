@@ -1,0 +1,25 @@
+{
+    "concrete": {
+      "M200": {"unit": "m³", "price": 1800},
+      "M300": {"unit": "m³", "price": 2100},
+      "M400": {"unit": "m³", "price": 2400}
+    },
+    "rebar": {
+      "A500C-Ø10": {"unit": "ton", "price": 28000},
+      "A500C-Ø12": {"unit": "ton", "price": 27500},
+      "A500C-Ø16": {"unit": "ton", "price": 27200}
+    },
+    "labor": {
+      "mason": {"unit": "hour", "price": 150},
+      "carpenter": {"unit": "hour", "price": 180},
+      "electrician": {"unit": "hour", "price": 200}
+    },
+    "equipment": {
+      "crane_25t": {"unit": "shift", "price": 4500},
+      "excavator": {"unit": "shift", "price": 3200},
+      "concrete_pump": {"unit": "shift", "price": 2800}
+    },
+    "overhead_rate": 0.15,
+    "profit_margin": 0.10
+  }
+  
