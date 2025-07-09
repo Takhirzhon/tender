@@ -35,7 +35,7 @@ def download_prozorro_tenders(topic=None, total_to_download=1, days_back=None):
     print(f"🔍 Downloading tenders for topic: {topic}")
 
     # Load topic keywords
-    keywords_path = os.path.join("data", "keywords.json")
+    keywords_path = "../data/keywords.json"
     if not os.path.exists(keywords_path):
         raise FileNotFoundError("❌ keywords.json not found!")
 
@@ -272,7 +272,7 @@ if tab == "📥 Data Downloader":
     st.header("📥 Download Tenders from ProZorro")
 
     # Load topics from keywords.json dynamically
-    with open("/mount/src/tender/interface/data/keywords.json", "r", encoding="utf-8") as f:
+    with open("../data/keywords.json", "r", encoding="utf-8") as f:
         topic_keywords = json.load(f)
     topic_list = list(topic_keywords.keys())
 
