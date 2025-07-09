@@ -16,6 +16,7 @@ from core.score_matrix import AVK5Estimator, DocumentComplianceChecker, Profitab
 import requests
 import xml.etree.ElementTree as ET
 from urllib.parse import urlencode
+BASE_DIR = os.path.dirname(__file__)
 
 PROZORRO_API_URL = "https://public.api.openprocurement.org/api/2.4/tenders"
 OUTPUT_DIR = "../tenders"
@@ -35,7 +36,7 @@ def download_prozorro_tenders(topic=None, total_to_download=1, days_back=None):
     print(f"🔍 Downloading tenders for topic: {topic}")
 
     # Load topic keywords
-    keywords_path = os.path.join("data", "keywords.json")
+    keywords_path = os.path.join(BASE_DIR, "data", "keywords.json")
     if not os.path.exists(keywords_path):
         raise FileNotFoundError("❌ keywords.json not found!")
 
@@ -276,7 +277,6 @@ if tab == "📥 Data Downloader":
     with open(keywords_path, "r", encoding="utf-8") as f:
         topic_keywords = json.load(f)
     topic_list = list(topic_keywords.keys())
-
 
     topic = st.selectbox("📚 Choose Tender Topic", topic_list)
     num_tenders = st.slider("📦 Number of Tenders to Download", min_value=5, max_value=100, value=20, step=5)
