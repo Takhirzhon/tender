@@ -35,7 +35,7 @@ def download_prozorro_tenders(topic=None, total_to_download=1, days_back=None):
     print(f"🔍 Downloading tenders for topic: {topic}")
 
     # Load topic keywords
-    keywords_path = "../data/keywords.json"
+    keywords_path = os.path.join("data", "keywords.json")
     if not os.path.exists(keywords_path):
         raise FileNotFoundError("❌ keywords.json not found!")
 
@@ -272,9 +272,11 @@ if tab == "📥 Data Downloader":
     st.header("📥 Download Tenders from ProZorro")
 
     # Load topics from keywords.json dynamically
-    with open("../data/keywords.json", "r", encoding="utf-8") as f:
+    keywords_path = os.path.join("data", "keywords.json")
+    with open(keywords_path, "r", encoding="utf-8") as f:
         topic_keywords = json.load(f)
     topic_list = list(topic_keywords.keys())
+
 
     topic = st.selectbox("📚 Choose Tender Topic", topic_list)
     num_tenders = st.slider("📦 Number of Tenders to Download", min_value=5, max_value=100, value=20, step=5)
@@ -375,7 +377,7 @@ elif tab == "🔍 Tender Analysis":
             progress_bar.progress((i + 1) / len(selected_tenders))
             status_text.text(f"Analyzing {tid}...")
 
-            path = f"../tenders/ProZorro_{tid}.json"
+            path = os.path.join("tenders", f"ProZorro_{tid}.json")
             if os.path.exists(path):
                 with open(path, "r", encoding="utf-8") as f:
                     data = json.load(f)
@@ -538,7 +540,7 @@ elif tab == "📊 Tender Evaluation":
         st.warning("⚠️ No tender analysis available. Please analyze tenders first.")
         st.stop()
 
-    avk5_data = json.load(open("../data/avk5_standards.json", "r", encoding="utf-8"))
+    avk5_data = json.load(open("data/avk5_standards.json", "r", encoding="utf-8"))
     compliance = st.session_state.document_vault
     profitability = ProfitabilityAnalyzer(AVK5Estimator())
 

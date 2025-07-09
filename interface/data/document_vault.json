@@ -7,7 +7,7 @@
       "validity": "2026-12-31",
       "path": "/docs/license.pdf",
       "tags": [],
-      "added_date": "2025-07-08T18:29:25.726713"
+      "added_date": "2025-07-08T15:18:05.577643"
     },
     {
       "id": "DOC-0002",
@@ -16,16 +16,96 @@
       "validity": "2025-12-31",
       "path": "/docs/tax_cert.pdf",
       "tags": [],
-      "added_date": "2025-07-08T18:29:25.726713"
+      "added_date": "2025-07-08T15:18:05.593921"
+    },
+    {
+      "id": "DOC-0003",
+      "name": "Construction License",
+      "type": "License",
+      "validity": "2026-12-31",
+      "path": "/docs/license.pdf",
+      "tags": [],
+      "added_date": "2025-07-08T15:19:22.388327"
+    },
+    {
+      "id": "DOC-0004",
+      "name": "Tax Certificate 2025",
+      "type": "Tax Certificate",
+      "validity": "2025-12-31",
+      "path": "/docs/tax_cert.pdf",
+      "tags": [],
+      "added_date": "2025-07-08T15:19:22.389005"
+    },
+    {
+      "id": "DOC-0005",
+      "name": "Construction License",
+      "type": "License",
+      "validity": "2026-12-31",
+      "path": "/docs/license.pdf",
+      "tags": [],
+      "added_date": "2025-07-08T21:53:45.929202"
+    },
+    {
+      "id": "DOC-0006",
+      "name": "Tax Certificate 2025",
+      "type": "Tax Certificate",
+      "validity": "2025-12-31",
+      "path": "/docs/tax_cert.pdf",
+      "tags": [],
+      "added_date": "2025-07-08T21:53:45.929202"
+    },
+    {
+      "id": "DOC-0007",
+      "name": "Construction License",
+      "type": "License",
+      "validity": "2026-12-31",
+      "path": "/docs/license.pdf",
+      "tags": [],
+      "added_date": "2025-07-09T10:43:39.160813"
+    },
+    {
+      "id": "DOC-0008",
+      "name": "Tax Certificate 2025",
+      "type": "Tax Certificate",
+      "validity": "2025-12-31",
+      "path": "/docs/tax_cert.pdf",
+      "tags": [],
+      "added_date": "2025-07-09T10:43:39.160813"
+    },
+    {
+      "id": "DOC-0009",
+      "name": "Construction License",
+      "type": "License",
+      "validity": "2026-12-31",
+      "path": "/docs/license.pdf",
+      "tags": [],
+      "added_date": "2025-07-09T11:02:11.972590"
+    },
+    {
+      "id": "DOC-0010",
+      "name": "Tax Certificate 2025",
+      "type": "Tax Certificate",
+      "validity": "2025-12-31",
+      "path": "/docs/tax_cert.pdf",
+      "tags": [],
+      "added_date": "2025-07-09T11:02:11.972590"
     }
   ],
   "categories": {
     "License": [
-      "DOC-0001"
+      "DOC-0001",
+      "DOC-0003",
+      "DOC-0005",
+      "DOC-0007",
+      "DOC-0009"
     ],
     "Tax Certificate": [
-      "DOC-0002"
+      "DOC-0002",
+      "DOC-0004",
+      "DOC-0006",
+      "DOC-0008",
+      "DOC-0010"
     ]
   },
-  "last_updated": "2025-07-08T18:29:25.726713"
+  "last_updated": "2025-07-08T15:18:05.577643"
 }
