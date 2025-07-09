@@ -272,7 +272,7 @@ if tab == "📥 Data Downloader":
     st.header("📥 Download Tenders from ProZorro")
 
     # Load topics from keywords.json dynamically
-    with open("../data/keywords.json", "r", encoding="utf-8") as f:
+    with open("/opt/render/project/src/data/keywords.json", "r", encoding="utf-8") as f:
         topic_keywords = json.load(f)
     topic_list = list(topic_keywords.keys())
 
@@ -538,7 +538,7 @@ elif tab == "📊 Tender Evaluation":
         st.warning("⚠️ No tender analysis available. Please analyze tenders first.")
         st.stop()
 
-    avk5_data = json.load(open("../data/avk5_standards.json", "r", encoding="utf-8"))
+    avk5_data = json.load(open("/opt/render/project/src/data/avk5_standards.json", "r", encoding="utf-8"))
     compliance = st.session_state.document_vault
     profitability = ProfitabilityAnalyzer(AVK5Estimator())
 
